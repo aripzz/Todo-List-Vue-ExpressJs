@@ -1,3 +1,5 @@
 */.env
 */node_modules
 /todo-backend/dist
+/todo-backend/src/.vercel
+/todo-backend/.vercel
