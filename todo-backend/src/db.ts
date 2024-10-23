@@ -11,7 +11,8 @@ const host: string = process.env.DB_HOST as string;
 const dbName: string = process.env.DB_NAME as string;
 const dbPort: string = process.env.DB_PORT as string;
 
-const connectionString: string = `postgresql://${username}:${password}@${host}:${dbPort}/${dbName}`;
+const connectionString: string = `postgresql://${username}:${encodeURIComponent(password)}@${host}:${dbPort}/${dbName}`;
 const db = pgp(connectionString);
+
 
 export default db;
