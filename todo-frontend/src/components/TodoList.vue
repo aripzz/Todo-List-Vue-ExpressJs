@@ -5,8 +5,11 @@
             <input v-model="newTodo.title" placeholder="Title" class="border border-gray-300 rounded p-2 w-full" />
         </div>
         <div class="mb-4">
-            <input v-model="newTodo.description" placeholder="Description"
-                class="border border-gray-300 rounded p-2 w-full" />
+            <textarea v-model="newTodo.description" placeholder="Description"
+                class="border border-gray-300 rounded p-2 w-full resize-none" rows="4" maxlength="250"></textarea>
+            <div class="text-sm text-gray-500 mt-1">
+                {{ 250 - newTodo.description.length }}
+            </div>
         </div>
         <button @click="addUpdateTodo" class="btn w-full py-2 rounded text-white"
             :class="newTodo.new ? 'bg-green-500 hover:bg-green-600' : 'bg-blue-500 hover:bg-blue-600'">
