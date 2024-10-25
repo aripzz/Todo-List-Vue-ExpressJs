@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const API_URL = process.env.API_URL;
+const API_URL = process.env.VUE_APP_API_URL;
 
 export const getAllTodos = async () => {
     try {
@@ -46,7 +45,6 @@ export const deleteTodo = async (id) => {
         handleAxiosError(error);
     }
 };
-
 const handleAxiosError = (error) => {
     if (axios.isAxiosError(error)) {
         console.error('Axios error:', error.message);
